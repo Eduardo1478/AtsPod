@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -15,9 +15,9 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
         <div class="container d-flex flex-column align-items-center">
             <!-- Small Centered Title -->
-            <span class="navbar-text fs-6 text-center">Small Centered Title</span>
+            <span class="navbar-text fs-6 text-center" style="color: orange;">[Making Your Life Easier]</span>
             <!-- Larger Centered Title -->
-            <h1 class="navbar-brand mb-2 fs-4 text-center">Larger Centered Title</h1>
+            <h1 class="navbar-brand mb-2 fs-1 fw-bold text-center">Discovering the World</h1>
 
         <!-- Edit Button aligned to the right -->
         <div class="ms-auto">
@@ -28,24 +28,154 @@
             <div class="d-flex justify-content-center align-items-center w-100 mt-2">
                 <!-- Centered Button Group for Bordering Buttons -->
                 <div class="btn-group" role="group" aria-label="Subtopics">
-                    <button type="button" class="btn btn-outline-primary">Subtopic 1</button>
-                    <button type="button" class="btn btn-outline-primary">Subtopic 2</button>
-                    <button type="button" class="btn btn-outline-primary">Subtopic 3</button>
-                    <button type="button" class="btn btn-outline-primary">Subtopic 4</button>
-                    <button type="button" class="btn btn-outline-primary">Subtopic 5</button>
+                    <button type="button" class="btn btn-outline-secondary text-black">All</button>
+                    <button type="button" class="btn btn-outline-secondary text-black">Travel</button>
+                    <button type="button" class="btn btn-outline-secondary text-black">Lifestyle</button>
+                    <button type="button" class="btn btn-outline-secondary text-black">Bussines</button>
+                    <button type="button" class="btn btn-outline-secondary text-black">Food</button>
+                    <button type="button" class="btn btn-outline-secondary text-black">Work</button>
                 </div>
 
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Main Content for Postal Cards -->
     <div class="container mt-5">
-        <h1 class="text-primary">Welcome to My Bootstrap Project</h1>
-        <p class="lead">This is a sample project using HTML, CSS, and Bootstrap.</p>
-        <button class="btn btn-primary">Click Me</button>
+        <div class="row">
+            <!-- Postal Cards with Edit and Delete Buttons -->
+            <div class="col-md-6 mb-4">
+                <div class="postal-card" style="background-image: url('media/Glaciar.png');">
+                    <div class="postal-overlay"></div>
+                    <h3 class="mb-1 postal-title">The Ice Frontier</h3>
+                    <p class="postal-description">Discover the majestic beauty of towering glaciers meeting crystal-clear waters. An awe-inspiring landscape where ice and nature create a frozen paradise.</p>
+                    <p class="postal-category">TRAVEL</p>
+                    <div class="button-group mt-2">
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" onclick="openEditModal(this)">Edit</button>
+                        <button class="btn btn-danger btn-sm" onclick="deletePostal(this)">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="postal-card" style="background-image: url('media/Beach.jpg');">
+                    <div class="postal-overlay"></div>
+                    <h3 class="mb-1 postal-title">Paradise on the Shore</h3>
+                    <p class="postal-description">Crystal-clear turquoise waters meet pristine sands and majestic rocks. Escape to this tropical paradise where tranquility and beauty unite.</p>
+                    <p class="postal-category">LIFESTYLE</p>
+                    <div class="button-group mt-2">
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" onclick="openEditModal(this)">Edit</button>
+                        <button class="btn btn-danger btn-sm" onclick="deletePostal(this)">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+            <div class="col-md-6 mb-4">
+                <div class="postal-card" style="background-image: url('media/Airport.jpeg');">
+                    <div class="postal-overlay"></div>
+                    <h3 class="mb-1 postal-title">A Journey Begins</h3>
+                    <p class="postal-description">Standing on the edge of departure, a traveler gazes out at the skies. Ready for new horizons, every journey starts with a single step.</p>
+                    <p class="postal-category">TRAVEL</p>
+                    <div class="button-group mt-2">
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" onclick="openEditModal(this)">Edit</button>
+                        <button class="btn btn-danger btn-sm" onclick="deletePostal(this)">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="postal-card" style="background-image: url('media/Food.png');">
+                    <div class="postal-overlay"></div>
+                    <h3 class="mb-1 postal-title">The Michelin Experience</h3>
+                    <p class="postal-description">Indulge in the artistry of haute cuisine. Each dish is a masterpiece crafted with precision, flavor, and elegance, delivering an unforgettable dining experience.</p>
+                    <p class="postal-category">FOOD</p>
+                    <div class="button-group mt-2">
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" onclick="openEditModal(this)">Edit</button>
+                        <button class="btn btn-danger btn-sm" onclick="deletePostal(this)">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="postal-card" style="background-image: url('media/Sunset.jpg');">
+                    <div class="postal-overlay"></div>S
+                    <h3 class="mb-1 postal-title">Golden Horizon</h3>
+                    <p class="postal-description">Witness the breathtaking beauty of a fiery sunset as the sun dips below the horizon, painting the sky and ocean in shades of gold and red.</p>
+                    <p class="postal-category">LYFESTYLE</p>
+                    <div class="button-group mt-2">
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" onclick="openEditModal(this)">Edit</button>
+                        <button class="btn btn-danger btn-sm" onclick="deletePostal(this)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit Postal Card</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="edit-title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="edit-title" placeholder="Enter title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-description" class="form-label">Description</label>
+                            <textarea class="form-control" id="edit-description" rows="3" placeholder="Enter description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-background" class="form-label">Background Image URL</label>
+                            <input type="url" class="form-control" id="edit-background" placeholder="Enter image URL">
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="saveChanges()">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap JavaScript Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Variable to hold the current card being edited
+        let currentCard = null;
+
+        // Function to open the Edit Modal with pre-filled data
+        function openEditModal(button) {
+            // Identify the current postal card
+            currentCard = button.closest('.postal-card');
+            
+            // Get the current title, description, and background image of the card
+            const title = currentCard.querySelector('.postal-title').textContent;
+            const description = currentCard.querySelector('.postal-description').textContent;
+            const backgroundImage = currentCard.style.backgroundImage.slice(5, -2); // Remove url() wrapper
+            
+            // Pre-fill the modal fields with the current card's data
+            document.getElementById('edit-title').value = title;
+            document.getElementById('edit-description').value = description;
+            document.getElementById('edit-background').value = backgroundImage;
+        }
+
+        // Function to delete the postal card
+        function deletePostal(button) {
+            button.closest('.col-md-4').remove();
+        }
+
+        // Function to save changes and update the postal card
+        function saveChanges() {
+            if (currentCard) {
+                // Update the card's title, description, and background image with modal inputs
+                currentCard.querySelector('.postal-title').textContent = document.getElementById('edit-title').value;
+                currentCard.querySelector('.postal-description').textContent = document.getElementById('edit-description').value;
+                currentCard.style.backgroundImage = `url('${document.getElementById('edit-background').value}')`;
+
+                // Close the modal
+                const modal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+                modal.hide();
+            }
+        }
+    </script>
 </body>
 </html>

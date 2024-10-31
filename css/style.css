@@ -1,0 +1,47 @@
+/* Postal card styling */
+.postal-card {
+    position: relative;
+    color: white;
+    width: 100%;  
+    height: 300px; 
+    padding-top: 56.25%;          /* 16:9 aspect ratio */
+    border-radius: 8px;
+    overflow: hidden;
+    background-size: cover;       /* Ensures the background image covers the entire card */
+    background-position: center;  /* Centers the image within the card */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+}
+
+.postal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for readability */
+}
+
+.postal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    z-index: 1; /* Make sure it sits above the overlay */
+}
+
+.postal-description {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    z-index: 1;
+}
+
+.postal-category {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ddd;
+    margin-top: 10px;
+    z-index: 1;
+}
